@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:admin')->get('/jadwal/create', [JadwalViewController::class, 'create'])->name('jadwal.create');
     Route::middleware('role:admin')->get('/jadwal/edit/{id}', [JadwalViewController::class, 'edit'])->name('jadwal.edit');
 
+    Route::middleware('role:pemesan')->get('/invoice/{id}', [RiwayatController::class, 'show'])->name('invoice.show');
+
 });
 
 
