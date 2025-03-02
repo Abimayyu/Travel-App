@@ -1,0 +1,56 @@
+.sortable {
+    cursor: pointer;
+}
+
+.sortable:hover {
+    outline: 2px solid rgba(0, 0, 0, 0.05);
+    outline-offset: -2px;
+}
+
+.loadingbars {
+    --lebar: 70px;
+    width: var(--lebar);
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side, #3a57e8 90%, #0000);
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100%/3) 50%;
+    animation: l3 0.8s infinite ease-in-out;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+}
+
+@keyframes l3 {
+    20% {
+        background-position: 0% 0%, 50% 50%, 100% 50%
+    }
+
+    40% {
+        background-position: 0% 100%, 50% 0%, 100% 50%
+    }
+
+    60% {
+        background-position: 0% 50%, 50% 100%, 100% 0%
+    }
+
+    80% {
+        background-position: 0% 50%, 50% 50%, 100% 100%
+    }
+}
+
+.clear-btn {
+    fill: #3a57e8;
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+}
+
+.clear-btn:hover {
+    opacity: 0.8;
+}
+
+.clear-btn:active {
+    opacity: 0;
+}

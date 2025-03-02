@@ -1,0 +1,27 @@
+.sub-header-wrapper {
+    position: relative;
+}
+
+.sub-header-image {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust this based on your desired height */
+    filter: brightness(30%); /* Darken the image */
+}
+
+.sub-header-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    text-align: center;
+}
+
+.sub-header-text h2, .sub-header-text h5 {
+    z-index: 2;
+}

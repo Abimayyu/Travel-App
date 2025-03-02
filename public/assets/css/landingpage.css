@@ -1,0 +1,591 @@
+:root {
+    --main-bg: white;
+    --main-color: black;
+
+    --bg-main-header: #f4f9ff;
+    --bg-navbar-dropdown: #ebf0f5;
+    --bg-navbar-dropdown-hover: #d1e4fc;
+    --bg-navbar-dropdown-active: #d1e4fc;
+
+    --bg-footer: #163e95;
+    /* --bg-footer:#052975; */
+    /* --bg-footer:#1c3d5d; */
+
+    --text-hover: #a2c2f0;
+    --text-active: #1a72e8;
+
+    --nav-bg: linear-gradient(
+        135deg,
+        #e8f0fe,
+        #ffffff
+    ); /* Gradasi warna seperti gambar */
+    --nav-hover: #3a57e8;
+    --nav-text: #333333;
+    --nav-active: #3a57e8;
+    --text-primary: #212121;
+    --icon: #1e3a8a;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background: var(--main-bg);
+    color: var(--main-color);
+}
+
+section {
+    padding: 60px 0;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.link:hover {
+    color: var(--nav-active);
+}
+
+.icon {
+    color: var(--icon);
+    opacity: 0.8;
+}
+
+/* Carousel Mulai */
+.carousel-section .carousel-item img {
+    width: 100%;
+    height: 63vh;
+    object-fit: cover;
+}
+
+.carousel-section .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carousel-bg::before {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.carousel-section .carousel-konten {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.carousel-section .carousel-konten h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-section .carousel-konten p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-section .carousel-control-next,
+.carousel-section .carousel-control-prev {
+    width: 5%;
+}
+
+.carousel-section .carousel-indicators button {
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+}
+
+.carousel-section .carousel-indicators .active {
+    background-color: #007bff;
+}
+
+.carousel-section {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-section .container {
+    padding: 0;
+}
+
+@media (max-width: 1024px) {
+    .carousel-konten h2 {
+        font-size: 2.35rem !important;
+    }
+
+    .carousel-konten p {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-konten h2 {
+        font-size: 2rem !important;
+    }
+
+    .carousel-konten p {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-konten h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .carousel-konten p {
+        font-size: 0.8rem !important;
+    }
+}
+/* Carousel Akhir */
+
+/* Header Mulai */
+.header-image {
+    background-image: url("../images/header.jpeg");
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header-text {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+}
+
+.header-breadcrumb {
+    bottom: 50%;
+    right: 50%;
+    z-index: 100;
+    transform: translate(50%, 0);
+}
+
+.breadcrumb {
+    --bs-breadcrumb-divider-color: white;
+}
+.breadcrumb-item {
+    font-weight: 500;
+}
+.breadcrumb-item.active {
+    color: gray;
+}
+.breadcrumb-item a {
+    color: white;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+    text-decoration: unset;
+}
+.breadcrumb-item a:hover {
+    opacity: 0.75;
+}
+/* Header Akhir */
+
+/* Navbar Mulai */
+.navbar {
+    padding: 20px 0px;
+    z-index: 100;
+    font-weight: 500;
+}
+.main-navbar {
+    background-color: var(--bg-main-header);
+}
+
+.navbar-title {
+    font-weight: 600;
+}
+
+.navbar-stick {
+    transform: translateY(0) !important;
+}
+
+.navbar-secondary {
+    background-color: var(--bg-main-header);
+    position: fixed !important;
+    opacity: 0.95;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out, padding-right 0s;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    color: var(--text-hover);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--text-active);
+}
+
+@media (max-width: 600px) {
+    .navbar-title {
+        white-space: pre-line;
+        font-size: 1rem !important;
+    }
+}
+@media (max-width: 400px) {
+    .navbar-title {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .navbar-kecil {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.dropdown-menu {
+    background-color: var(--bg-navbar-dropdown);
+    border: unset;
+    border-radius: unset;
+}
+.dropdown-menu a {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--bg-navbar-dropdown-hover);
+    color: var(--text-active);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: var(--bg-navbar-dropdown-active);
+    color: var(--text-active);
+}
+
+@media (min-width: 1199px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu.show {
+        display: block;
+    }
+}
+/* Navbar Akhir */
+
+/* Footer Mulai */
+.footer {
+    color: white;
+    background-color: var(--bg-footer);
+}
+
+.footer a {
+    color: white;
+    text-decoration: unset;
+    opacity: 0.75;
+    transition: color 0.1s ease-in-out;
+}
+
+.footer a:hover {
+    /* opacity: 1; */
+    color: var(--text-hover);
+}
+
+.footer-inner {
+    padding: 5.625rem 0rem;
+}
+/* Footer Akhir */
+
+.error-image {
+    object-fit: contain !important;
+    /* background-color: lightslategray; */
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-img-overlay {
+    opacity: 1;
+}
+/* h1 {
+    font-size: calc(1.5rem + 1vw);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-size: calc(1rem + 0.8vw);
+    font-weight: 650;
+    color: var(--text-primary);
+}
+
+h3 {
+    font-size: calc(1.3rem + 0.6vw);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+h6 {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-primary);
+} */
+
+.card-img-overlay h5 {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border: unset;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-img {
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-img-container {
+    position: relative;
+    overflow: hidden; /* Menyembunyikan bagian gambar yang keluar dari kontainer */
+}
+
+.caption-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Warna transparan hitam */
+    opacity: 0; /* Menghilangkan overlay pada awalnya */
+    transition: opacity 0.3s ease-in-out; /* Efek transisi */
+}
+
+.card-img-container:hover .caption-overlay {
+    opacity: 1; /* Overlay muncul saat gambar di-hover */
+}
+
+.caption-text {
+    text-align: center;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Berita Mulai */
+.berita {
+    padding: 20px;
+    /* background: #f5f5f5; */
+    /* border-radius: 5px; */
+}
+.sidebar-berita {
+    padding: 20px;
+}
+/* Berita Akhir */
+
+/* FancyBox Mulai*/
+.fancybox-caption {
+    font-size: x-large !important;
+}
+/* Change the button color */
+#scrollToTop {
+    background-color: #3a57e8;
+    color: white;
+}
+#scrollToTop:hover {
+    background-color: #2645e4;
+}
+
+.cursor-d {
+    cursor: default;
+}
+
+.img-300x200 {
+    width: 300px;
+    height: 200px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; 
+}
+
+.image-container img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(100%);
+    display: flex;
+    justify-content: center; /* Untuk posisi horizontal */
+    align-items: center; /* Untuk posisi vertikal */
+    cursor: pointer;
+    height: 100%; /* Membuat tinggi caption disesuaikan dengan konten */
+    padding: 10px; /* Memberikan jarak vertikal sekitar teks */
+}
+
+.image-container:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 768px) {
+   
+    .caption {
+        font-size: 0.6em; /* Ukuran font lebih kecil pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .caption {
+        font-size: 0.5em; /* Ukuran font lebih kecil untuk layar sangat kecil (HP kecil) */
+    }
+}
+
+.label-link {
+    color: black;
+    opacity: 0.75;
+    transition: color 0.2s ease-in-out;
+}
+.label-link:hover {
+    color: #3a57e8;
+    opacity: 0.75;
+}
+h3 {
+    color: var(--bg-footer);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3::before,
+h3::after {
+    content: "";
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--bg-footer);
+    margin: 0;
+}
+
+h3::before {
+    margin-right: 20px;
+}
+
+h3::after {
+    margin-left: 20px;
+}
+
+/* Load Mulai */
+.memulai {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.memulai-body {
+    background-color: var(--bg-footer);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.memulai-load {
+    --c: no-repeat linear-gradient(var(--bg-main-header) 0 0);
+    background: var(--c), var(--c), var(--c), var(--c), var(--c), var(--c),
+        var(--c), var(--c), var(--c);
+    background-size: 16px 16px;
+    animation: l32-1 1s infinite, l32-2 1s infinite;
+}
+@keyframes l32-1 {
+    0%,
+    100% {
+        width: 45px;
+        height: 45px;
+    }
+    35%,
+    65% {
+        width: 65px;
+        height: 65px;
+    }
+}
+@keyframes l32-2 {
+    0%,
+    40% {
+        background-position: 0 0, 0 50%, 0 100%, 50% 100%, 100% 100%, 100% 50%,
+            100% 0, 50% 0, 50% 50%;
+    }
+    60%,
+    100% {
+        background-position: 0 50%, 0 100%, 50% 100%, 100% 100%, 100% 50%,
+            100% 0, 50% 0, 0 0, 50% 50%;
+    }
+}
+/* Load Akhir */

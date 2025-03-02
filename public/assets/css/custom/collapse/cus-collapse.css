@@ -1,0 +1,19 @@
+.collapse-content {
+    overflow: hidden;
+    max-height: 0; /* Start with height 0 */
+    opacity: 0;
+    transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
+}
+.open-text,
+.close-text {
+    display: inline;
+}
+.collapse-btn{
+    margin: 5px 0;
+    background: unset;
+    border: unset;
+    transition: color 0.1s ease-in-out;
+}
+.collapse-btn:hover{
+    color: #1a72e8;
+}
